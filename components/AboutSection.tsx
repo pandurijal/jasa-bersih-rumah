@@ -14,9 +14,9 @@ const AboutSection: React.FC = () => {
             />
           </div>
           <div className="lg:w-1/2">
-            <h2 className="text-4xl font-bold font-serif mb-4">Tentang Jasa Bersih Rumah</h2>
+            <h2 className="text-4xl font-bold font-serif mb-4">Tentang EasyClean ID</h2>
             <p className="text-lg text-gray-600 mb-6">
-              Didirikan dari hasrat untuk kebersihan dan kemewahan, Jasa Bersih Rumah bertujuan untuk mengubah cara Anda memandang layanan kebersihan. Kami bukan sekadar membersihkan; kami merawat rumah Anda dengan standar tertinggi, menggunakan produk ramah lingkungan dan staf terlatih secara profesional.
+              Didirikan dari hasrat untuk kebersihan dan kemewahan, EasyClean ID bertujuan untuk mengubah cara Anda memandang layanan kebersihan. Kami bukan sekadar membersihkan; kami merawat rumah Anda dengan standar tertinggi, menggunakan produk ramah lingkungan dan staf terlatih secara profesional.
             </p>
             <div className="space-y-4">
                 <div className="flex items-start">

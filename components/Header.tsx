@@ -10,7 +10,7 @@ const Header: React.FC<HeaderProps> = ({ onBookNow }) => {
     <header className="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         <div className="text-2xl font-bold text-slate-800 font-serif">
-          Jasa Bersih Rumah
+          EasyClean ID
         </div>
         <nav className="hidden md:flex items-center space-x-8">
           <a href="#services" className="text-gray-600 hover:text-slate-800 transition-colors">Layanan</a>

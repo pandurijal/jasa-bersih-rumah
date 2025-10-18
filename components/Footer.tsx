@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-xl font-bold font-serif mb-4">Jasa Bersih Rumah</h3>
+            <h3 className="text-xl font-bold font-serif mb-4">EasyClean ID</h3>
             <p className="text-slate-400">Layanan kebersihan premium untuk hunian perumahan Anda.</p>
           </div>
           <div>
@@ -40,7 +40,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
         <div className="mt-12 border-t border-slate-700 pt-8 text-center text-slate-500">
-          <p>&copy; {currentYear} Jasa Bersih Rumah. All rights reserved.</p>
+          <p>&copy; {currentYear} EasyClean ID. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -6,7 +6,7 @@ const testimonials: Testimonial[] = [
   {
     name: 'Ibu Maya',
     location: 'Warga Perumahan Pondok Indah',
-    quote: 'Tim Jasa Bersih Rumah sangat profesional dan teliti. Rumah saya tidak pernah sebersih ini! Layanan yang sangat bisa diandalkan.',
+    quote: 'Tim EasyClean ID sangat profesional dan teliti. Rumah saya tidak pernah sebersih ini! Layanan yang sangat bisa diandalkan.',
     avatarUrl: 'https://picsum.photos/100/100?random=2',
   },
   {
