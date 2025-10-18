@@ -9,13 +9,36 @@ const LoginPopup: React.FC<LoginPopupProps> = ({ isOpen, onClose }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isSignUp, setIsSignUp] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [error, setError] = useState('');
 
   if (!isOpen) return null;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', { email, password, isSignUp });
-    onClose();
+    setError('');
+    
+    if (!isSignUp) {
+      if (email === 'admin@gmail.com' && password === 'admin1234') {
+        setShowSuccess(true);
+        setTimeout(() => {
+          setShowSuccess(false);
+          onClose();
+          setEmail('');
+          setPassword('');
+        }, 2000);
+      } else {
+        setError('Email atau password salah');
+      }
+    } else {
+      setShowSuccess(true);
+      setTimeout(() => {
+        setShowSuccess(false);
+        onClose();
+        setEmail('');
+        setPassword('');
+      }, 2000);
+    }
   };
 
   return (
@@ -28,11 +51,29 @@ const LoginPopup: React.FC<LoginPopupProps> = ({ isOpen, onClose }) => {
           ×
         </button>
         
-        <h2 className="text-2xl font-bold text-slate-800 mb-6 text-center">
-          {isSignUp ? 'Daftar' : 'Masuk'}
-        </h2>
-        
-        <form onSubmit={handleSubmit} className="space-y-4">
+        {showSuccess ? (
+          <div className="text-center">
+            <div className="text-6xl mb-4">✅</div>
+            <h2 className="text-2xl font-bold text-green-600 mb-2">
+              {isSignUp ? 'Pendaftaran Berhasil!' : 'Login Berhasil!'}
+            </h2>
+            <p className="text-gray-600">
+              {isSignUp ? 'Akun Anda telah berhasil dibuat.' : 'Selamat datang kembali!'}
+            </p>
+          </div>
+        ) : (
+          <>
+            <h2 className="text-2xl font-bold text-slate-800 mb-6 text-center">
+              {isSignUp ? 'Daftar' : 'Masuk'}
+            </h2>
+            
+            {error && (
+              <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+                {error}
+              </div>
+            )}
+            
+            <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
               Email
@@ -69,14 +110,16 @@ const LoginPopup: React.FC<LoginPopupProps> = ({ isOpen, onClose }) => {
           </button>
         </form>
         
-        <div className="mt-4 text-center">
-          <button
-            onClick={() => setIsSignUp(!isSignUp)}
-            className="text-slate-600 hover:text-slate-800 text-sm"
-          >
-            {isSignUp ? 'Sudah punya akun? Masuk' : 'Belum punya akun? Daftar'}
-          </button>
-        </div>
+            <div className="mt-4 text-center">
+              <button
+                onClick={() => setIsSignUp(!isSignUp)}
+                className="text-slate-600 hover:text-slate-800 text-sm"
+              >
+                {isSignUp ? 'Sudah punya akun? Masuk' : 'Belum punya akun? Daftar'}
+              </button>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
