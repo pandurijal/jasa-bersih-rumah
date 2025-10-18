@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useMemo } from 'react';
 import { type ServicePackage, type BookingDetails } from '../types';
 
@@ -7,6 +8,7 @@ interface BookingWizardProps {
 }
 
 const servicePackages: ServicePackage[] = [
+    { id: 'basic', name: 'Kilau Dasar', price: 50000, priceDisplay: '', description: '', features: [], tier: 'basic' },
     { id: 'standard', name: 'Standard Clean', price: 100000, priceDisplay: '', description: '', features: [], tier: 'standard' },
     { id: 'premium', name: 'Premium Deep Clean', price: 250000, priceDisplay: '', description: '', features: [], tier: 'premium' },
     { id: 'luxury', name: 'Ultra-Luxury Detail', price: 500000, priceDisplay: '', description: '', features: [], tier: 'luxury' },
@@ -95,7 +97,7 @@ const BookingWizard: React.FC<BookingWizardProps> = ({ initialPackage, onClose }
           {step === 1 && (
             <div>
               <h3 className="text-xl font-bold mb-4">1. Pilih Paket Layanan</h3>
-              <div className="grid md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {servicePackages.map(pkg => (
                   <button key={pkg.id} onClick={() => handlePackageSelect(pkg)} className={`p-6 rounded-lg border-2 text-left transition-colors ${bookingDetails.servicePackage?.id === pkg.id ? 'border-slate-800 bg-slate-50' : 'border-gray-200 hover:border-slate-400'}`}>
                     <h4 className="font-bold">{pkg.name}</h4>

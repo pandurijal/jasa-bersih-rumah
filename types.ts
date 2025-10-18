@@ -6,7 +6,7 @@ export interface ServicePackage {
   priceDisplay: string;
   description: string;
   features: string[];
-  tier: 'standard' | 'premium' | 'luxury';
+  tier: 'basic' | 'standard' | 'premium' | 'luxury';
 }
 
 export interface Testimonial {

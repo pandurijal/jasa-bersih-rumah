@@ -8,6 +8,15 @@ interface ServicesSectionProps {
 
 const servicePackages: ServicePackage[] = [
   {
+    id: 'basic',
+    name: 'Kilau Dasar',
+    price: 50000,
+    priceDisplay: 'Mulai dari Rp 50.000',
+    description: 'Pembersihan cepat untuk area-area penting, menjaga rumah tetap terlihat baik.',
+    features: ['Penyapuan & Pengepelan', 'Pembersihan Debu Permukaan'],
+    tier: 'basic',
+  },
+  {
     id: 'standard',
     name: 'Standard Clean',
     price: 100000,
@@ -37,6 +46,10 @@ const servicePackages: ServicePackage[] = [
 ];
 
 const tierStyles = {
+    basic: {
+        borderColor: 'border-gray-200',
+        buttonClass: 'bg-slate-800 hover:bg-slate-700 text-white',
+    },
     standard: {
         borderColor: 'border-gray-300',
         buttonClass: 'bg-slate-800 hover:bg-slate-700 text-white',
@@ -85,7 +98,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectPackage }) =>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-12">
           Pilih paket yang paling sesuai dengan kebutuhan Anda, dari pembersihan rutin hingga perawatan detail yang mewah.
         </p>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {servicePackages.map(pkg => (
             <ServiceCard key={pkg.id} pkg={pkg} onSelect={() => onSelectPackage(pkg)} />
           ))}
